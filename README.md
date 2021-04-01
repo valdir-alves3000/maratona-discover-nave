@@ -1,6 +1,6 @@
 <p>
-Obrigado Rocketset, 
-<b>por mais um conteudo de qualidade<b>.
+Obrigado Rocketseat, 
+<b>por mais um conteúdo de qualidade<b>.
 </p>
 <h1 align="center">
   <img alt="JobsCalc" title="JobsCalc" src="https://i.imgur.com/Veqm7Gh.png" width="220px" />
