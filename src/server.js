@@ -18,6 +18,6 @@ server.use(express.urlencoded({ extended: true }));
 //routes
 server.use(routes);
 
-const port = process.env.APP_URL || 3000
+const PORT = process.env.APP_URL || 3000;
 
-server.listen(port, () => console.log('rodando'));
+server.listen(PORT);
