@@ -1,9 +1,13 @@
 const express = require("express");
 const server = express();
-const routes = require('./routes');
+const routes = require("./routes");
+const path = require("path");
 
 //template engine
 server.set('view engine', 'ejs');
+
+//mudar o localização da pasta views
+server.set('views', path.join(__dirname, 'views'));
 
 //habilitar arquivos statics
 server.use(express.static("public"));
@@ -14,4 +18,6 @@ server.use(express.urlencoded({ extended: true }));
 //routes
 server.use(routes);
 
-server.listen(3000, () => console.log('rodando'));
+const port = process.env.APP_URL || 3000
+
+server.listen(port, () => console.log('rodando'));
