@@ -1,28 +1,25 @@
-const express = require("express");
-const cors = require('cors');
-const server = express();
+const express = require('express')
+const server = express()
 
-const routes = require("./routes");
-const path = require("path");
+const path = require('path')
+const routes = require('./routes')
 
-server.use(cors());
+const PORT = process.env.PORT || 3000
 
-//template engine
-server.set('view engine', 'ejs');
+// alterar a localização da pasta views
+server.set('views', path.join(__dirname, 'views'))
 
-//mudar o localização da pasta views
-server.set('views', path.join(__dirname, 'views'));
+// habilitar arquivos statics
+server.use(express.static("public"))
 
-//habilitar arquivos statics
-server.use(express.static("public"));
-
+//utilizar template engine
+server.set('view engine', 'ejs')
 
 //usar dados body vindos da url
-server.use(express.urlencoded({ extended: true }));
+server.use(express.urlencoded({ extended:  true }))
 
 //routes
-server.use(routes);
+server.use(routes)
 
-const PORT = process.env.APP_URL || 3000;
-
-server.listen(PORT);
+//localizando URL da aplicação
+server.listen(PORT, () => console.log(`Listening on ${PORT}`))
